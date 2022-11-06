@@ -8,7 +8,7 @@ import { Button } from "../components/Button";
 
 export function SingIn(){
 
-  const { signIn, user} = useAuth();
+  const { signIn, isUserLoading } = useAuth();
 
 
   return (
@@ -20,6 +20,8 @@ export function SingIn(){
         type="SECONDARY"
         mt={12}
         onPress={signIn}
+        isLoading={isUserLoading}
+        _loading={{ _spinner: { color: 'white' } }}
       />
 
       <Text color="white" textAlign="center" mt={4}>
